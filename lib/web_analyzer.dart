@@ -244,6 +244,8 @@ class WebAnalyzer {
     if (url.contains("m.toutiaoimg.cn")) useDesktopAgent = false;
     if (url.contains("weibo.com") || url.contains("m.weibo.cn"))
       useDesktopAgent = false;
+    if (url.contains("douyin.com")) useDesktopAgent = false;
+
     Response? res;
     final uri = Uri.parse(url);
     final ioClient = HttpClient()..badCertificateCallback = _certificateCheck;
