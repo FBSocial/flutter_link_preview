@@ -245,6 +245,8 @@ class WebAnalyzer {
     if (url.contains("weibo.com") || url.contains("m.weibo.cn"))
       useDesktopAgent = false;
     if (url.contains("douyin.com")) useDesktopAgent = false;
+    if (url.contains("xiaohongshu.com") || url.contains("xhslink.com"))
+      useDesktopAgent = false;
 
     Response? res;
     final uri = Uri.parse(url);
