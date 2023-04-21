@@ -45,12 +45,6 @@ public class SwiftLinkFetchPlugin: NSObject, FlutterPlugin, UIAlertViewDelegate,
                 result(dictionary)
             }
             break
-        case "linkFetchWithFilterLargeFile":
-            let linkFetch = LinkFetchWithFilterLargeFile(url: url) { (dictionary) in
-                result(dictionary)
-            }
-            linkFetch.fetch()
-            break
         case "linkFetchHead":
             let linkHeaderFetch = LinkFetchHeader(url: url) { (dictionary) in
                 result(dictionary)

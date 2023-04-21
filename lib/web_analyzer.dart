@@ -111,21 +111,15 @@ class WebAnalyzer {
     useDesktopAgent = true,
     Map<String, String>? customHeader,
   }) async {
-    Map<String, dynamic> result = {};
-    if (Platform.isIOS) {
-      result = await LinkFetch.linkFetchWithFilterLargeFile(
-          url: url, encodeUrl: "false");
-      if (result.isEmpty) return null;
-    } else {
-      final response = await _requestUrl(url,
-          useDesktopAgent: useDesktopAgent, customHeader: customHeader);
-      if (response == null) return null;
-      result['content-type'] = response.headers['content-type'] ?? "";
-      result['data'] = response.bodyBytes;
-      result['status_code'] = response.statusCode;
-      result['url'] = response.request?.url.toString() ?? url;
-      print("$url ${response.statusCode}");
-    }
+    final Map<String, dynamic> result = {};
+    final response = await _requestUrl(url,
+        useDesktopAgent: useDesktopAgent, customHeader: customHeader);
+    if (response == null) return null;
+    result['content-type'] = response.headers['content-type'] ?? "";
+    result['data'] = response.bodyBytes;
+    result['status_code'] = response.statusCode;
+    result['url'] = response.request?.url.toString() ?? url;
+    print("$url ${response.statusCode}");
     if (multimedia) {
       final String? contentType = result["content-type"];
       if (contentType != null) {
