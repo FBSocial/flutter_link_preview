@@ -79,9 +79,10 @@ class WebAnalyzer {
     bool useMultithread = false,
     bool useDesktopAgent = true,
     Map<String, String>? customHeader,
+    bool isUseCache = true,
   }) async {
     InfoBase? info = getInfoFromCache(url);
-    if (info != null) return info;
+    if (isUseCache && info != null) return info;
     try {
       if (useMultithread)
         info = await _getInfoByIsolate(url, multimedia,
