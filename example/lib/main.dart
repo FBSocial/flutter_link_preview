@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               TextField(controller: _controller),
               const CupertinoActivityIndicator(
-                radius: 10,
+                radius: 12,
               ),
               Row(
                 children: <Widget>[

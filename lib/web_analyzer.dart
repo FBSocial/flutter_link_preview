@@ -231,6 +231,18 @@ class WebAnalyzer {
   static bool _certificateCheck(X509Certificate cert, String host, int port) =>
       true;
 
+  static Future<Response?> requestUrl(String url,
+      {int count = 0,
+      String? cookie,
+      Map<String, String>? customHeader,
+      bool useDesktopAgent = true}) async {
+    return _requestUrl(url,
+        count: count,
+        cookie: cookie,
+        customHeader: customHeader,
+        useDesktopAgent: useDesktopAgent);
+  }
+
   static Future<Response?> _requestUrl(String url,
       {int count = 0,
       String? cookie,

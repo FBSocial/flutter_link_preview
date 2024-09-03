@@ -8,7 +8,6 @@ import 'dart:isolate';
 import 'package:collection/collection.dart';
 import 'package:fast_gbk/fast_gbk.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_link_preview/link_fetch.dart';
 import 'package:html/dom.dart' hide Text;
 import 'package:html/parser.dart' as parser;
 import 'package:http/http.dart';
