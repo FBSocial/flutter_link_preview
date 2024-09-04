@@ -134,7 +134,7 @@ class WebAnalyzer {
       }
     }
 
-    return _getWebInfo(result, url, multimedia);
+    return getWebInfo(result, url, multimedia);
   }
 
   static Future<InfoBase?> _getInfoByIsolate(
@@ -332,7 +332,7 @@ class WebAnalyzer {
     return res;
   }
 
-  static Future<InfoBase?> _getWebInfo(
+  static Future<InfoBase?> getWebInfo(
       Map<String, dynamic> response, String? url, bool? multimedia) async {
     if (response['status_code'].toString() == HttpStatus.ok.toString()) {
       String? html;
